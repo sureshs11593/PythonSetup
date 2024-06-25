@@ -26,7 +26,8 @@ jobs:
       - name: Setup Docker
         uses: docker-practice/actions-setup-docker@master
         timeout-minutes: 12
-      - name: Printing Version
+      - name: build docker image
         run: |
           set -x
           docker version
+          docker build -t firstdockerimage .
