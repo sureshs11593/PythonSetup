@@ -1,0 +1,19 @@
+name: py build project
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  pybuildjob1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pybuildstep1
+        uses: actions/checkout@v4
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
