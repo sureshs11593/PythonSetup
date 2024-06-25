@@ -23,3 +23,10 @@ jobs:
         continue-on-error: true 
       - name : checking the skipped error
         run: echo Checking the Skipped error
+      - name: Setup Docker
+        uses: docker-practice/actions-setup-docker@master
+        timeout-minutes: 12
+      - name: Printing Version
+        run: |
+          set -x
+          docker version
